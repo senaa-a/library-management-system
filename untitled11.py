@@ -21,11 +21,13 @@ class Library:
         self.file.close()
 
     def list_books(self):
+        self.file.seek(0)
+        
         if not self.books:
             print("Book not exist.")
         else:
             for book in self.books:
-                print("title:, (book[0]), author: (book[1])")
+                print("title:", book[0] + ",", "author:", book[1])
                 print()
 
     def add_book(self):
